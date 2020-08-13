@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="tracker-container">
+            <div class="header-container">
+                <h1>Expense Tracker</h1>
+            </div>
+            <div class="balance-container">
+                <h2>Your Balance:</h2>
+                <h3>0.00</h3>
+            </div>
+            <div class="income-expense-container">
+                <div class="income-box">
+                    <p id="incomeValue">+$0.00</p>
+                </div>
+                <div class="expense-box">
+                    <p id="expenseValue">-$0.00</p>
+                </div>
+            </div>
+            <div class="transaction-container">
+                <form id="addTrans">
+                    <h2>Add New Transaction</h2>
+                    <div class="label-container">
+                        <h2>Name</h2>
+                        <input type="text" id="expenseName">
+                    </div>
+                    <div class="amount-container">
+                        <h2>Amount</h2>
+                        <h3>[Negative - Expense || Positive - Income]</h3>
+                        <input type="text" id="itemValue">
+                    </div>
+                    <button type="submit">Add Transaction</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="history-main-container">
+            <div class="history-container">
+                <div class="history-label-container">
+                    <h2>History</h2>
+                </div>
+                <div class="history-value-container">
+                    <p id="historyValue">No History</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
