@@ -3,52 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4194a93c4e.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <title>Expense Tracker</title>
 </head>
 <body>
-    <div class="main-container">
-        <div class="tracker-container">
-            <div class="header-container">
-                <h1>Expense Tracker</h1>
-            </div>
-            <div class="balance-container">
-                <h2>Your Balance:</h2>
-                <h3>0.00</h3>
-            </div>
-            <div class="income-expense-container">
-                <div class="income-box">
-                    <p id="incomeValue">+$0.00</p>
+    <div class="primary-container">
+        <div class="main-container">
+            <div class="tracker-container">
+                <div class="header-container">
+                    <h1><i class="fas fa-coins"></i> Expense Tracker <i class="far fa-credit-card"></i></h1>
                 </div>
-                <div class="expense-box">
-                    <p id="expenseValue">-$0.00</p>
+                <div class="balance-container">
+                    <h2>YOUR BALANCE</h2>
+                    <h3>$<span id="balanceValue">0.00</span></h3>
                 </div>
-            </div>
-            <div class="transaction-container">
-                <form id="addTrans">
-                    <h2>Add New Transaction</h2>
-                    <div class="label-container">
-                        <h2>Name</h2>
-                        <input type="text" id="expenseName">
+                <div class="income-expense-container">
+                    <div class="income-box">
+                        <h3>INCOME</h3>
+                        <p>+$<span id="incomeVal">0.00</span></p>
                     </div>
-                    <div class="amount-container">
-                        <h2>Amount</h2>
-                        <h3>[Negative - Expense || Positive - Income]</h3>
-                        <input type="text" id="itemValue">
+                    <div class="expense-box">
+                        <h3>EXPENSE</h3>
+                        <p>+$<span id="expenseVal">0.00</span></p>
                     </div>
-                    <button type="submit">Add Transaction</button>
-                </form>
-            </div>
-
-        </div>
-        <div class="history-main-container">
-            <div class="history-container">
-                <div class="history-label-container">
-                    <h2>History</h2>
                 </div>
-                <div class="history-value-container">
-                    <p id="historyValue">No History</p>
+                <div class="history-container">
+                    <div class="history-label-container">
+                        <h2>History <i class="fas fa-history"></i></h2>
+                        <hr>
+                    </div>
+                    <div class="history-value-container">
+                        <div class="indiv-history-value-container">
+                            <h3 id="historyName">Sample<p id="historyValue">-$400</p></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="transaction-container">
+                    <form id="addTrans">
+                        <h2>Add New Transaction <i class="fas fa-folder-plus"></i></h2>
+                        <hr>
+                        <div class="label-container">
+                            <h2>Label</h2>
+                            <input type="text" id="expenseName" placeholder="Enter Label...">
+                        </div>
+                        <div class="amount-container">
+                            <h2>Amount</h2>
+                            <h3>[Negative - Expense]|[Positive - Income]</h3>
+                            <input type="text" id="itemValue" placeholder="Enter Amount...">
+                        </div>
+                        <button type="submit">Add Transaction</button>
+                    </form>
                 </div>
             </div>
         </div>
