@@ -13,7 +13,7 @@ body {
 .main-container {
     display: block;
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -73,9 +73,11 @@ body {
 
 .income-box span {
     color: darkgreen;
+    font-family: 'Nunito', sans-serif;
 }
 .income-box p {
     color: darkgreen;
+    font-family: 'Nunito', sans-serif;
 }
 
 .expense-box {
@@ -92,9 +94,11 @@ body {
 
 .expense-box span {
     color: maroon;
+    font-family: 'Nunito', sans-serif;
 }
 .expense-box p {
     color: maroon;
+    font-family: 'Nunito', sans-serif;
 }
 
 .history-container {
@@ -120,7 +124,7 @@ body {
 }
 
 .history-value-container {
-    max-height: 200px;
+    max-height: 110px;
     overflow-y: scroll;
 }
 
@@ -133,6 +137,11 @@ body {
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     margin-bottom: 6px;
+
+}
+
+.indiv-history-value-container:hover {
+    border: 1.5px solid rgba(18, 5, 209, 0.479);
 }
 
 .indiv-history-value-container p {
