@@ -13,20 +13,17 @@ let form = document.getElementById('addTrans');
 //Functions//
 
 function updateBalance() {
-    console.log(incomeVal.innerHTML, expenseVal.innerHTML);
-
     balanceValue.innerHTML = parseFloat(incomeVal.innerHTML - expenseVal.innerHTML);
 }
 
 function updateExpenses(numberSign) {
     let newIntValueIncome = parseFloat(newItemValue.value);
-
     if (numberSign === '+') {
         incomeVal.innerHTML = (parseFloat(incomeVal.innerHTML) + newIntValueIncome);
     } else if (numberSign === '-') {
         expenseVal.innerHTML = Math.abs(parseFloat(expenseVal.innerHTML) + newIntValueIncome)
     }
-    
+
     updateBalance();
 
 }
@@ -60,8 +57,11 @@ function checkEmpty() {
 }
 
 function showFillAllError() {
-    console.log("This is working");
     return fillAllError.style.visibility = 'visible';
+}
+
+function delChild(parent, child) {
+    return parent.removeChild(child);
 }
 
 function addToHistory(sign, color) {
@@ -69,13 +69,19 @@ function addToHistory(sign, color) {
     newElement.className = 'indiv-history-value-container';
 
     newElement.innerHTML = `
+        <button id="historyDel"><i class="fas fa-times-circle fa-1.5x"></i></button>
         <h3>${newItemName.value}</h3>
         <p>${sign}$${Math.abs(newItemValue.value)}</p>
     `
     newElement.lastElementChild.style.color = color;
-    
     historyContainer.appendChild(newElement);
 
+    let delBtn = document.getElementById('historyDel');
+
+    delBtn.addEventListener('click', () => {
+        historyContainer.remove(newElement);
+    });
+    //Problems 8/15/2020: Deletion of all newElement Children on click/ Delete button only works for the first one/ If you delete everything, and try to add again, it won't let you.. 
 }
 
 

@@ -132,11 +132,13 @@ body {
     display: flex;
     box-shadow: var(--box-shadow);
     justify-content: space-between;
+    align-items: center;
     border: 1px solid rgba(0, 0, 0,0.12);
     padding: 7px 7px;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     margin-bottom: 6px;
+    background-color: white;
 
 }
 
@@ -147,7 +149,23 @@ body {
 .indiv-history-value-container p {
     font-weight: 900;
     color: maroon;
-    
+}
+
+.indiv-history-value-container button {
+    padding-top: 3px;
+    border: none;
+    background-color: transparent;
+    color: maroon;
+    cursor: pointer;
+    transition: ease-in-out;
+}
+
+.indiv-history-value-container button:hover {
+    transform: scale(1.15);
+}
+
+.indiv-history-value-container button:focus {
+    outline: none;
 }
 
 .transaction-container {
