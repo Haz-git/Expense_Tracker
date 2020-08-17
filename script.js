@@ -66,10 +66,14 @@ function delChild(parent, child) {
 
 function balanceIncome(numString) {
     incomeVal.innerHTML = Math.abs(parseFloat(incomeVal.innerHTML) - parseFloat(numString)).toFixed(2);
+
+    updateBalance();
 }
 
 function balanceExpense(numString) {
     expenseVal.innerHTML = Math.abs(parseFloat(expenseVal.innerHTML) - parseFloat(numString)).toFixed(2);
+
+    updateBalance();
 }
 
 function addToHistory(sign, color) {
@@ -96,8 +100,10 @@ function addToHistory(sign, color) {
         historyContainer.removeChild(newElement);
         if (sign === '-') {
             balanceExpense(pHistory.innerHTML.substring(2));
+            updateBalance();
         } else {
             balanceIncome(pHistory.innerHTML.substring(2));
+            updateBalance();
         }
         
     });
