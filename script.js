@@ -67,21 +67,29 @@ function delChild(parent, child) {
 function addToHistory(sign, color) {
     let newElement = document.createElement('div');
     newElement.className = 'indiv-history-value-container';
+    let delBtn = document.createElement('button');
+    let delIcon = document.createElement('i');
+    delIcon.className = 'fas fa-times-circle fa-1.5x';
+    delBtn.appendChild(delIcon);
+    newElement.appendChild(delBtn);
+    let h3Header = document.createElement('h3');
+    h3Header.innerHTML = newItemName.value;
+    newElement.appendChild(h3Header);
+    let pHistory = document.createElement('p');
+    pHistory.innerHTML = sign + '$' + Math.abs(newItemValue.value);
+    newElement.appendChild(pHistory);
 
-    newElement.innerHTML = `
-        <button id="historyDel"><i class="fas fa-times-circle fa-1.5x"></i></button>
-        <h3>${newItemName.value}</h3>
-        <p>${sign}$${Math.abs(newItemValue.value)}</p>
-    `
+    console.log(newElement.innerHTML);
     newElement.lastElementChild.style.color = color;
     historyContainer.appendChild(newElement);
 
-    let delBtn = document.getElementById('historyDel');
-
-    delBtn.addEventListener('click', () => {
-        historyContainer.remove(newElement);
+    delBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        historyContainer.removeChild(newElement);
+        console.log('This is working');
     });
-    //Problems 8/15/2020: Deletion of all newElement Children on click/ Delete button only works for the first one/ If you delete everything, and try to add again, it won't let you.. 
+
+    //Problems 8/15/2020: Deletion of all newElement Children on click/ Delete button only works for the first one/ If you delete everything, and try to add again, it won't let you.. - Solved -- Apparently, you can't use innerHTML along with document.createElement or else the addEventListener will not work...
 }
 
 
